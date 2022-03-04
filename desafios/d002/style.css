@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+body {
+    background-color: rgb(39, 39, 39);
+    font-family: 'cutive Mono', monospace;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+
+.cartao {
+    background-image: url(imagens/backgorund.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    margin-top: 20%;
+    padding: 1px 20px;
+    box-sizing: border-box;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.instagram {
+    list-style-image: url(imagens/Insta.png);
+}
+
+.twitter {
+    list-style-image: url(imagens/Twitter.png);
+}
+
+.youtube {
+    list-style-image: url(imagens/Youtube.png);
+}
+
+.links:hover {
+    color: rgb(75, 75, 160);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .section-2{
+            background-image: url(image/nice-business-desk-on-black-background.jpg);
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .form-container{
+            margin: 40px;
+            padding: 40px;
+            box-sizing: border-box;
+            float: left;
+            width: 400px;
+            height: 560px;
+            background-color: rgba(255, 255, 255, 0.836);
+        }
+
+        h1{
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+        }
+
+        .form-container input{
+            width: 100%;
+            height: 40px;
+            border: none;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"]{
+            background-color: black;
+            font-weight: bold;
+            color: white;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #ffd000;
+    color: black;
+    transition: 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="section-2">
+        <div class="form-container">
+            
+            <h1>Entramos em contato com você</h1>
+            <input type="name" name="name" id="nome" placeholder="Nome"><br>
+            <input type="email" placeholder="Email"><br>
+            <input type="textarea" placeholder="Digite aqui o que gostaria...">
+
+            <input type="submit" value="ENVIAR">
+        </div>
+    </section>
+</body>
+</html>

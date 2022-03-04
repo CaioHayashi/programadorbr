@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'lato', sans-serif;
+    background-color: black;
+}
+
+header{
+    background-image: url(image/serious-thoughtful-man-making-assumption-looking-right-and-thinking.jpg);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.menu {
+    float: right;
+}
+
+.menu ul{
+    list-style: none;
+    float: left;
+    margin: 0%;
+}
+
+.menu ul li {
+    float: left;
+    padding: 20px 40px 20px 40px;
+}
+
+#entrar{
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+}
+
+#entrar:hover {
+    background-color: #ffd000;
+    color: black;
+    transition: 0.3s;
+}
+
+.menu ul li:hover{
+    color: #ffd000;
+}
+
+nav {
+    margin: auto;
+
+    height: 600px;
+}
+
+.contain{
+    width: 500px;
+    font-size: 3.6rem;
+    font-weight: 900;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 65%;
+}
+
+section {
+    position: relative;
+    height: 800px;
+}
+
+section {
+    background-image: url(image/Sem\ Título-1.jpg);
+    overflow: hidden;
+    background-size: cover;
+    height: 500px;
+}
+
+
+.section-2{
+    background-image: url(image/nice-business-desk-on-black-background.jpg);
+    background-size: cover;
+    overflow: hidden;
+    height: 800px;
+    position: relative;
+}
+
+.form-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px;
+    box-sizing: border-box;
+    float: left;
+    width: 400px;
+    height: 560px;
+    background-color: rgba(255, 255, 255, 0.836);
+}
+
+h1{
+    font-size: 2.0rem;
+    margin-bottom: 40px;
+    font-size: bold;
+}
+
+.form-container input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"]{
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+
+input[type="submit"]:hover{
+    background-color: #ffd000;
+color: black;
+transition: 0.3s;
+}
+
+
+.contain-s {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3.6rem;
+    font-weight: 900;
+    color: rgb(255, 255, 255); 
+}
+
+footer {
+    position: relative;
+    background-color: black;
+    height: 200px;
+    color: #5f5f5f;
+    box-sizing: border-box;
+}
+
+.form-r {
+    float: right;
+    font-size: 14px;
+    position: relative;
+    height: 200px;
+    width: 600px;
+    background-color: rgba(22, 22, 22, 0.041);
+    margin: 20px;    
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.form-r ul {
+    margin: 0;
+    padding: 0%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+a {
+    text-decoration: none;
+    color: #5f5f5f;
+}
+
+a:hover{
+    color: white;
+}
