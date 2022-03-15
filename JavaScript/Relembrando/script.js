@@ -35,32 +35,11 @@ Object
 */
 
 
-function objNew(n, s){
-    this.nome = n,
-    this.sobrenome = s
-}
-
-a1 = new objNew('Caio', 'Hayashi')
-
-console.log(a1)
+var data = new Date ('08, 9 2010')
+var sem = ['Dom', 'Seg' ,'Ter', 'Qua', 'Qui', 'Sex', 'Sab']
 
 
-function obj(n, s){
-    return {
-        nome: n,
-        sobrenome: s
-    }
-}
-
-aluno1 = obj('Coio', 'Hayashi')
-
-console.log(aluno1)
-
-
-
-var a = {
-    nome: 'Caio',
-    sobrenome: 'Hayashi'
-}
-
-console.log(a)
+console.log(data)
+console.log(sem[data.getDay()])
+console.log(data.getFullYear())
+console.log(data.getTime())
