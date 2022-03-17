@@ -32,14 +32,19 @@ Object
    .forEach(function(element){
        console.log(element)
    })    
-*/
 
-
-var data = new Date ('08, 9 2010')
-var sem = ['Dom', 'Seg' ,'Ter', 'Qua', 'Qui', 'Sex', 'Sab']
-
-
-console.log(data)
-console.log(sem[data.getDay()])
+   var data = new Date
+   console.log(sem[data.getDay()])
 console.log(data.getFullYear())
 console.log(data.getTime())
+
+ const num3 = {}
+ num3. nome = 'Igor'  A const não pode reatribuir, mas permite modificar ela.
+
+*/
+
+/* function h1click(){
+    console.log('Executando função')
+}
+ */
+
