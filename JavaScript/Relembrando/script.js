@@ -48,3 +48,9 @@ console.log(data.getTime())
 }
  */
 
+function mudarTexto(){
+    let input = document.getElementById('texto')
+    let h1 = document.getElementById('titulo')
+
+    h1.innerText = input.value
+}
