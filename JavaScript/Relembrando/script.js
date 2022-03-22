@@ -48,9 +48,8 @@ console.log(data.getTime())
 }
  */
 
-function mudarTexto(){
-    let input = document.getElementById('texto')
+function mudarTexto(i){
     let h1 = document.getElementById('titulo')
 
-    h1.innerText = input.value
+    h1.innerText = i.value
 }
