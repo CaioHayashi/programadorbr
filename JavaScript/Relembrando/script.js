@@ -49,9 +49,24 @@ console.log(data.getTime())
 
 ---------------------------------------------------------
 
+function onOver (element) {
+    element.style.backgroundColor = '#6c63ff'
+}
+
+*/
+function loaded(){
+let t = document.getElementById('titulo')
+
+// t.onclick = novoTexto
+t.addEventListener('mouseover', mouseover)
+t.addEventListener('mouseout', mouseout)
 
 }
-*/
 
+function mouseover(){
+    this.innerHTML = 'Mouse em cima do elemento'
+}
 
-
+function mouseout(){
+    this.innerHTML = 'Mouse fora do elemento'
+}
