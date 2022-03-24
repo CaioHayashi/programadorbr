@@ -53,20 +53,32 @@ function onOver (element) {
     element.style.backgroundColor = '#6c63ff'
 }
 
+---------------------------------------------------------
+
+var.addEventListener('event', function)
+
+---------------------------------------------------------
+
+elemento pai e filho:
+
+element.children
+element.parentElement
+
+---------------------------------------------------------
+
+Numero aleatório redondo:
+
+let n = Math.round(Math.random() * 100)
+
+console.log(n)
+
 */
-function loaded(){
-let t = document.getElementById('titulo')
 
-// t.onclick = novoTexto
-t.addEventListener('mouseover', mouseover)
-t.addEventListener('mouseout', mouseout)
 
-}
 
-function mouseover(){
-    this.innerHTML = 'Mouse em cima do elemento'
-}
-
-function mouseout(){
-    this.innerHTML = 'Mouse fora do elemento'
+function string(a, n) {
+    a = 'fdhsuf'
+    n = 2
+    
+    return console.log(a.String.indexOf(a, n))
 }
