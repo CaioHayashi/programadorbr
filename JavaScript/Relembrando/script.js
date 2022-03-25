@@ -74,11 +74,16 @@ console.log(n)
 
 */
 
+onload = function(){
+    let nome = localStorage.getItem('guardar')
+    let add = document.getElementById('tarefa')
+    add.innerHTML = nome
+}
+
+function atualizar(element){
+    let valor = element.value
+    console.log(valor)
 
 
-function string(a, n) {
-    a = 'fdhsuf'
-    n = 2
-    
-    return console.log(a.String.indexOf(a, n))
+    localStorage.setItem('guardar', valor)
 }
