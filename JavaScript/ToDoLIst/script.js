@@ -1,9 +1,18 @@
-var valuetask = document.querySelector('#valuetask')
-var buttonAdd = document.querySelector('#buttonAdd')
+let container = document.getElementsByClassName('container')
+let valuetask = document.getElementById('valuetask')
+let addButton = document.getElementById('addButton')
 
-addButton.addEventListener('click' function(){
-    var paragraph = valuetask
-    paragraph.
+var array = []
 
+addButton.addEventListener('click', function(){
+    task = valuetask.value
+    array.push(task)
+
+    
 })
 
+
+
+/* .forEach(function(element){
+    console.log(element)
+}) */
