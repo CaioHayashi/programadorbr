@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        #btn {
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <h1>resultado</h1>
+        <input id="btn" type="button" value="enviar">
+    </div>
+
+    <script>
+        var h1 = document.getElementsByTagName('h1')
+        var btn = document.getElementById('btn')
+
+
+
+        btn.addEventListener('click', function(){
+            var num = Math.floor(Math.random()*100)
+            
+            console.log(num)
+            h1.innerText = num
+        })
+    </script>
+</body>
+</html>
