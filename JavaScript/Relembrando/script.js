@@ -72,7 +72,8 @@ let n = Math.round(Math.random() * 100)
 
 console.log(n)
 
-*/
+---------------------------------------------------------
+
 
 onload = function(){
     let nome = localStorage.getItem('guardar')
@@ -86,4 +87,22 @@ function atualizar(element){
 
 
     localStorage.setItem('guardar', valor)
+
+const vogais = 'aeiou'
+const char = vogais.charAt(2)
+
+console.log(char)
 }
+
+*/
+
+
+
+
+function nth(a){
+    a = ('aeiou')
+    let newA = a.split('')
+    return console.log(newA.slice(-3))
+}
+
+nth()
