@@ -1,25 +1,20 @@
-let container = document.getElementsByClassName('container');
-let valuetask = document.getElementById('valuetask');
-let addButton = document.getElementById('addButton');
-let res = document.getElementById('res');
+let input = document.getElementById("input");
+let btn = document.getElementById("btn");
+let res = document.getElementById("res");
 
-var array = []
-addButton. addEventListener('click', newTask);
+btn.addEventListener("click", newElement);
 
-function newTask() {
-    const task = valuetask.value
-    array.push(task)
+function newElement(){
 
-    console.log(array)
-   //res.innerText = array
-    addDiv()
-    
-}
-
-function addDiv() {
-    const newDiv = document.createElement("div");
-    
+    let newDiv = document.createElement("div");
     newDiv.classList.add("div-shadow");
     
+    
+    
+    newDiv.innerHTML = `${input.value} <input id="checkbox" type="checkbox">`
+    
+
     res.appendChild(newDiv);
+    input.value = '';
 }
+
