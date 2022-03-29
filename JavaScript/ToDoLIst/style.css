@@ -1,0 +1,7 @@
+.div-shadow {
+    margin: 15px;
+    width: 15em;
+    height: 2em;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.322);
+}

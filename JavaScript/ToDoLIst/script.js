@@ -1,15 +1,25 @@
-let container = document.getElementsByClassName('container')
-let valuetask = document.getElementById('valuetask')
-let addButton = document.getElementById('addButton')
-let res = document.getElementById('res')
+let container = document.getElementsByClassName('container');
+let valuetask = document.getElementById('valuetask');
+let addButton = document.getElementById('addButton');
+let res = document.getElementById('res');
 
-let array = []
+var array = []
+addButton. addEventListener('click', newTask);
 
-addButton.addEventListener('click', function(){
-    task = valuetask.value
+function newTask() {
+    const task = valuetask.value
     array.push(task)
 
-    res.innerHTML = array
-})
+    console.log(array)
+   //res.innerText = array
+    addDiv()
+    
+}
 
-
+function addDiv() {
+    const newDiv = document.createElement("div");
+    
+    newDiv.classList.add("div-shadow");
+    
+    res.appendChild(newDiv);
+}
