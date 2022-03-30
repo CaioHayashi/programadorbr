@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input id="task" type="text" placeholder="add new task">
+    <input id="btn" type="button" value="+">
+
+    <script>
+        let task = document.getElementById("task")
+        let btn = document.getElementById("btn")
+
+
+        btn.addEventListener("click", createELement)
+
+        function createELement(){
+            var newDiv = document.createElement("div")
+            var checkbox = document.createElement("input")
+            checkbox.setAttribute("type", "checkbox")
+
+
+            newDiv.innerHTML = task.value
+            document.body.appendChild(newDiv)
+            newDiv.appendChild(checkbox)
+            checkbox.classList.add("check")
+
+            task.value = ""
+        }
+
+    
+    if (document.getElementsByClassName("check").checked) {
+        console.log('cumprida')
+    }
+ 
+
+        
+        
+
+    </script>
+</body>
+</html>

@@ -96,13 +96,38 @@ console.log(char)
 
 */
 
+let input = document.getElementById("input")
+let btn = document.getElementById("btn")
+let res = document.getElementById("res")
+
+let array = []
 
 
+btn.addEventListener("click", print)
 
-function nth(a){
-    a = ('aeiou')
-    let newA = a.split('')
-    return console.log(newA.slice(-3))
+function print(){
+
+    array.push(input.value)
+    console.log(array)
+    let newDiv = document.createElement("div")
+    newDiv.innerHTML = `${input.value}`
+    newDiv.id = "content"
+    res.appendChild(newDiv)
+
+    input.value = ""
+    
 }
 
-nth()
+let mput = ''
+
+
+const jString = JSON.stringify(array)
+console.log(jString)
+
+/* localStorage.getItem()
+localStorage.setItem()
+localStorage.removeItem()
+localStorage.clear() */
+
+const jParse = JSON.parse(jString)
+console.log(jParse)

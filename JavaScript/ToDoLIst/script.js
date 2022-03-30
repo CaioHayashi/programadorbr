@@ -2,9 +2,12 @@ let input = document.getElementById("input");
 let btn = document.getElementById("btn");
 let res = document.getElementById("res");
 
+
+
 btn.addEventListener("click", newElement);
 
 function newElement(){
+    createBank()
 
     let newDiv = document.createElement("div");
     newDiv.classList.add("div-shadow");
@@ -16,5 +19,14 @@ function newElement(){
 
     res.appendChild(newDiv);
     input.value = '';
+}
+
+function createBank(){
+    let array = []
+
+
+    array.push(input.value)
+    let objJSON = JSON.stringify(array)
+    console.log(objJSON)
 }
 
