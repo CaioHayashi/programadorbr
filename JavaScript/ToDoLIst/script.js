@@ -1,32 +1,54 @@
-let input = document.getElementById("input");
-let btn = document.getElementById("btn");
-let res = document.getElementById("res");
+const input = document.getElementById("input")
+const btn = document.getElementById("btn")
+const res = document.getElementById("res")
+
+const tasks = []
+
+function createElement() {
+    res.innerHTML = ''
+
+    for(task of tasks) {
+        const newDiv = document.createElement("div")
+        const text = document.createTextNode(task)
+        newDiv.classList.add("div-shadow")
+
+       const check = document.createElement("input")
+       check.classList.add("check")
+       check. setAttribute("type", "checkbox")
 
 
+       check.addEventListener("change", removeElement)
 
-btn.addEventListener("click", newElement);
-
-function newElement(){
-    createBank()
-
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("div-shadow");
-    
-    
-    
-    newDiv.innerHTML = `${input.value} <input id="checkbox" type="checkbox">`
-    
-
-    res.appendChild(newDiv);
-    input.value = '';
+/*
+         const link = document.createElement("a")
+        const posicao = tasks.indexOf(task)
+ */
+        
+        newDiv.appendChild(text)
+        newDiv.appendChild(check)
+        res.appendChild(newDiv)
+    }
 }
 
-function createBank(){
-    let array = []
+createElement()
 
+function addElement() {
+    const textInput = input.value
+    tasks.push(textInput)
+    input.value = ''
 
-    array.push(input.value)
-    let objJSON = JSON.stringify(array)
-    console.log(objJSON)
+    createElement()
 }
 
+btn.addEventListener("click", addElement)
+
+function removeElement () {
+    if(this.checked) {
+        
+    } else {
+        
+    }
+}
+
+
+console.log(tasks)

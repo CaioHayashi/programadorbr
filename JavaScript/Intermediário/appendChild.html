@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <input id="task" type="text" placeholder="add new task">
+    <h1>To do List</h1>
+    <input id="task" type="text" placeholder="add new task...">
     <input id="btn" type="button" value="+">
+    <div id="res"></div>
+
+
+
+
 
     <script>
+        const res
         let task = document.getElementById("task")
         let btn = document.getElementById("btn")
 
@@ -19,8 +25,8 @@
         btn.addEventListener("click", createELement)
 
         function createELement(){
-            var newDiv = document.createElement("div")
-            var checkbox = document.createElement("input")
+            let newDiv = document.createElement("div")
+            let checkbox = document.createElement("input")
             checkbox.setAttribute("type", "checkbox")
 
 
@@ -30,16 +36,11 @@
             checkbox.classList.add("check")
 
             task.value = ""
+            
         }
-
     
-    if (document.getElementsByClassName("check").checked) {
-        console.log('cumprida')
-    }
- 
-
-        
-        
+        let check = document.getElementsByClassName("check")
+       
 
     </script>
 </body>
