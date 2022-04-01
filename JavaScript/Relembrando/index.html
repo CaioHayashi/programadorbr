@@ -16,7 +16,63 @@
 <body>
     <input type="text" id="input"><input type="button" value="enviar" id="btn">
     <div id="res"></div>
-    <script src="script.js"></script>
+
+
+
+    <script>
+        let input = document.getElementById("input")
+        let btn = document.getElementById("btn")
+        let res = document.getElementById("res")
+
+        let array = []
+
+        //
+        
+        onload = function () {
+            let save = localStorage.getItem("save")
+            let jParse = JSON.parse(save)
+
+            console.log(jParse)
+
+            
+                res.innerHTML = ""
+
+                for(task of jParse) {
+                let div = document.createElement("div")
+                div.innerHTML = task
+                res.appendChild(div)
+                    
+                
+            }
+            
+        }
+
+        //
+
+        btn.addEventListener("click", addElement)
+
+        function addElement(){
+            array.push(input.value)
+            let jString = JSON.stringify(array)
+            localStorage.setItem("save", jString)
+            onload()
+        }
+
+
+        //
+ 
+        /* function showElement() {
+            res.innerHTML = ""
+            
+            for(task of array) {
+                let div = document.createElement("div")
+                div.innerHTML = task
+                res.appendChild(div)
+            }
+        } */
+        
+
+    </script>
 </body>
 
 </html>

@@ -4,6 +4,10 @@ const res = document.getElementById("res")
 
 const tasks = []
 
+console.log(tasks)
+
+
+
 function createElement() {
     res.innerHTML = ''
 
@@ -19,10 +23,6 @@ function createElement() {
 
        check.addEventListener("change", removeElement)
 
-/*
-         const link = document.createElement("a")
-        const posicao = tasks.indexOf(task)
- */
         
         newDiv.appendChild(text)
         newDiv.appendChild(check)
@@ -30,11 +30,10 @@ function createElement() {
     }
 }
 
-createElement()
-
 function addElement() {
     const textInput = input.value
     tasks.push(textInput)
+
     input.value = ''
 
     createElement()
@@ -44,11 +43,15 @@ btn.addEventListener("click", addElement)
 
 function removeElement () {
     if(this.checked) {
-        
+        //???
     } else {
-        
+        //???
     }
 }
 
+const JString = JSON.stringify(tasks)
+localStorage.setItem("bank", JString)
 
-console.log(tasks)
+
+
+
