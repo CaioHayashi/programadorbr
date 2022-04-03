@@ -29,21 +29,29 @@
         <div id="res"></div>
     </div>
 
+ 
+
     <script>
         let h1 = document.querySelector('h1')
-        let btn = document.getElementById('btn')
+        let btn= document.getElementById('btn')
         let res = document.getElementById('res')
 
 
 
         btn.addEventListener('click', function(){
-            var num = Math.floor(Math.random()*100)
+            var num1 = Math.round(Math.random()*6)
             
-            console.log(num)
+            console.log(num1)
 
-            h1.innerText = num
+            h1.innerText = num1
+            
+            if(num1 === 0) {
+                btn()
+            }
         })
 
+
+ 
 
     
     </script>
