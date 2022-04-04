@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Título</h1>
+    <input type="number" placeholder="0s" id="input">
+    <input type="submit" value="iniciar" id="iniciar">
+    <input type="submit" value="parar" id="parar">
+
+
+    <script>
+         let input = document.getElementById("input")
+        document.getElementById("iniciar").addEventListener("click", iniciar)
+        document.getElementById("parar").addEventListener("click", parar)
+
+        var interval
+
+        function contar(){
+            document.getElementsByTagName("h1")[0].innerHTML = numero + "s"
+            numero--
+        }
+
+        function iniciar(){
+            numero = input.value
+
+
+            interval = setInterval(contar, 1000)
+        }
+        function parar(){
+            clearInterval(interval)
+        }
+    </script>
+</body>
+</html>

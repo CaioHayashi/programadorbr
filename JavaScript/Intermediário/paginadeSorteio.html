@@ -7,23 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-
     <h1 id="d"></h1>
-    <button onclick="sortear()">Sortear</button>
-
+    
+    <button id="btn">Sortear</button>
+    
 
     <script>
+    let nomes = ["Manoel", "José", "Felipe", "Marcos", "Caio", "João", "Mauricio"]
+    
+    document.getElementById("btn").addEventListener("click", sortear)
 
-        let pessoas = ['Igor', 'Jose', 'Marcos', 'Pamela', 'Joana']    
+    function sortear(){
+        let np = nomes.length
+
+        let ns = Math.floor(Math.random()*np)
+
+        document.getElementById("d").innerHTML = nomes[ns]
+    }
         
-        let np = pessoas.length
 
-        function sortear() {
-            //    let np = 100 //numero de pessoas
-            let ns = Math.floor(Math.random() * np)
-
-            document.getElementById('d').innerHTML = pessoas[ns] // 'd' de display
-        }
+        
 
     </script>
 </body>
