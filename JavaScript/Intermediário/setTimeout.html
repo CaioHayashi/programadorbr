@@ -21,8 +21,10 @@
         var interval
 
         function contar(){
-            document.getElementsByTagName("h1")[0].innerHTML = numero + "s"
-            numero--
+            if (numero >= 0){
+                document.getElementsByTagName("h1")[0].innerHTML = numero + "s"
+                numero--
+            }
         }
 
         function iniciar(){

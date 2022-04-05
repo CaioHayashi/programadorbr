@@ -7,69 +7,100 @@
     <title>Relembrando JS</title>
 </head>
 <style>
-    
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        transition: 1.05s;
+    }
 
+    h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        margin: 30px ;
+    }
 
+    body {
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+
+    }
+
+    main {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(255, 255, 255, 0.63);
+        height: 400px;
+        width: 400px;
+        border-radius: 20px;
+    }
+
+    main:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.305);
+    }
+    input {
+        
+        display: block;
+        padding: 15px;
+        margin: 10px auto;
+        width: 350px;
+        border: none;
+
+    }
+
+    #btn {
+        background-image: linear-gradient(to top, #ff9a9db1 0%, #fecfefc8 99%, #fecfefcc 100%);
+        color: white;
+        border: hidden;
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.305);
+        font-weight: bolder;
+        font-size: 1rem;
+
+    }
+
+    #btn:hover {
+        background-image: linear-gradient(to top, #ff9a9db1 0%, #fecfefc8 99%, #fecfefcc 100%);
+        transform: scale(1.05);
+        cursor: pointer;
+        transition: all 0.5s 0s ease;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.305);
+    }
 </style>
 
 
 <body>
-    <input type="text" id="input"><input type="button" value="enviar" id="btn">
-    <div id="res"></div>
-
-
+    <main>
+        <h1>Churrascometro.</h1>
+        <input type="number" placeholder="adultos" id="adultos">
+        <input type="number" placeholder="criancas" id="criancas">
+        <input type="number" placeholder="duracao" id="duracao">
+        <input type="button" value="calcular" id="btn">
+        <div id="res"></div>
+    </main>
 
     <script>
-        let input = document.getElementById("input")
-        let btn = document.getElementById("btn")
-        let res = document.getElementById("res")
+        const numAdultos = document.getElementById("adultos")
+        const numCriancas = document.getElementById("criancas")
+        const numDuracao = document.getElementById("duracao")
+        const btn = document.getElementById("btn")
+        const res = document.getElementById("res")
 
-        let array = []
 
-        //
-        
-        onload = function () {
-            let save = localStorage.getItem("save")
-            let jParse = JSON.parse(save)
+        const adultos = numAdultos.value
+        const criancas = numCriancas.value
+        const duracao = numDuracao.value
 
-            console.log(jParse)
+        res.innerHTML = calcAdultos(adultos) + calcCriancas(criancas)
 
-            
-                res.innerHTML = ""
-
-                for(task of jParse) {
-                let div = document.createElement("div")
-                div.innerHTML = task
-                res.appendChild(div)
-                    
-                
-            }
-            
+        function calcAdultos(){
         }
 
-        //
-
-        btn.addEventListener("click", addElement)
-
-        function addElement(){
-            array.push(input.value)
-            let jString = JSON.stringify(array)
-            localStorage.setItem("save", jString)
-            onload()
-        }
-
-
-        //
- 
-        /* function showElement() {
-            res.innerHTML = ""
-            
-            for(task of array) {
-                let div = document.createElement("div")
-                div.innerHTML = task
-                res.appendChild(div)
-            }
-        } */
         
 
     </script>
