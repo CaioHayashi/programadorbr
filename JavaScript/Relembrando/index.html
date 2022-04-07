@@ -13,12 +13,12 @@
         padding: 0%;
         box-sizing: border-box;
         transition: 1.05s;
+        font-family: 'Space Grotesk', sans-serif;
     }
 
     h1 {
-        font-family: 'Space Grotesk', sans-serif;
         font-weight: 700;
-        margin: 30px ;
+        margin: 27px ;
     }
 
     body {
@@ -31,25 +31,24 @@
 
     main {
         position: absolute;
-        top: 40%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
         background-color: rgba(255, 255, 255, 0.63);
-        height: 400px;
-        width: 400px;
+        min-height: 466px;
+        width: 317px;
         border-radius: 20px;
     }
 
     main:hover {
-        cursor: pointer;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.305);
     }
     input {
         
         display: block;
-        padding: 15px;
+        padding: 10px;
         margin: 10px auto;
-        width: 350px;
+        width: 275px;
         border: none;
 
     }
@@ -61,6 +60,7 @@
         text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.305);
         font-weight: bolder;
         font-size: 1rem;
+        cursor: pointer;
 
     }
 
@@ -71,40 +71,96 @@
         transition: all 0.5s 0s ease;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.305);
     }
+
+    #res0, #res1, #res2 {
+        margin:  5px 25px;
+    }
+
 </style>
 
 
 <body>
     <main>
         <h1>Churrascometro.</h1>
+
         <input type="number" placeholder="adultos" id="adultos">
         <input type="number" placeholder="criancas" id="criancas">
-        <input type="number" placeholder="duracao" id="duracao">
+        <input type="number" placeholder="duração(h)" id="duracao">
+
         <input type="button" value="calcular" id="btn">
-        <div id="res"></div>
+
+        <div id="res0"></div>
+        <div id="res1"></div>
+        <div id="res2"></div>
     </main>
 
-    <script>
+    <script>     
+    /* Carne = 400g/p | +6h = 600g
+    Cerveja = 1200ml/p | +6h = 2000ml
+    Refrigerante/Agua = 1000ml/p | +6h = 1500ml
+
+    Criança = 1/2 */
+
         const numAdultos = document.getElementById("adultos")
         const numCriancas = document.getElementById("criancas")
         const numDuracao = document.getElementById("duracao")
-        const btn = document.getElementById("btn")
-        const res = document.getElementById("res")
-
-
-        const adultos = numAdultos.value
-        const criancas = numCriancas.value
-        const duracao = numDuracao.value
-
-        res.innerHTML = calcAdultos(adultos) + calcCriancas(criancas)
-
-        function calcAdultos(){
-        }
+        const btn = document.getElementById("btn").addEventListener("click", calcular)
+        const res0 = document.getElementById("res0")
+        const res1 = document.getElementById("res1")
+        const res2 = document.getElementById("res2")
 
         
+        function calcular(){
+            const adultos = numAdultos.value
+            const criancas = numCriancas.value
+            const duracao = numDuracao.value
+
+            let qtdTotalCarnes = calcCarne(duracao) * adultos + (calcCarne(duracao) / 2) * criancas
+            console.log(qtdTotalCarnes)
+
+            let qtdTotalCerveja = calcCerveja(duracao) * adultos
+            console.log(qtdTotalCerveja)
+
+            let qtdTotalBebidas = calcBebidas(duracao) * adultos + (calcBebidas(duracao) / 2) * criancas
+            console.log(qtdTotalBebidas) 
+
+            
+            res0.innerHTML = `${qtdTotalCarnes}/kg (${calcCarne(duracao)}kg p/ adulto | ${calcCarne(duracao)/2}kg p/ criança)`
+
+            res1.innerHTML = `${Math.round(qtdTotalCerveja / 350)}/latas (${calcCerveja(duracao)}ml p/ adulto)`
+
+            res2.innerHTML = `${qtdTotalBebidas / 1000}/L (${calcBebidas(duracao)}ml p/ adulto | ${calcBebidas(duracao)/2}ml p/ criança)`
+        }
+                
+                
+                
+       
+
+        function calcCarne(duracao){
+            if(duracao >= 6){
+                return 600
+            } else {
+                return 400
+            }
+        }
+
+        function calcCerveja(duracao){
+            if(duracao >= 6){
+                return 2000
+            } else {
+                return 1200
+            }
+        }
+
+        function calcBebidas(duracao){
+            if(duracao >= 6){
+                return 1500
+            } else {
+                return 1000
+            }
+        }
 
     </script>
 </body>
 
 </html>
-
