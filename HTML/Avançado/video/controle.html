@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 640px;
+            height: 360px;
+        }
+
+        .video {
+            width: 100%;
+        }
+
+        .controls {
+            position: absolute;
+            top: 0%;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            opacity: 0;
+            transition: 700ms;
+            background: none;
+        }
+
+        .controls:hover {
+            opacity: 100%;
+            animation: normal;
+            background: linear-gradient(0deg, rgba(15, 15, 15, 0) 0%, rgba(0, 0, 0, 0.419) 100%);
+
+        }
+
+        .btn {
+            
+            position: relative;
+            top: 100%;
+            transform: translateY(-100%);
+            padding: 10px 10px;
+            width: 35px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+
+        <video id="video" class="video" src="asssets/12-1_BR1-2433511617_01.webm"></video>
+ 
+        <div class="controls">
+            <div>
+            </div>
+            <img class="btn" id="back" src="buttons/play-back-circle-outline.svg" alt="back">
+            <img class="btn" id="forward" src="buttons/play-forward-circle-outline.svg" alt="forward" >
+            <img class="btn" id="add" src="buttons/add-circle-outline.svg" alt="add">
+            <img class="btn" id="remove" src="buttons/remove-circle-outline.svg" alt="remove">
+            <img class="btn" id="play" src="buttons/play-circle-outline.svg" alt="play">
+            <img class="btn" id="stop" src="buttons/stop-circle-outline.svg" alt="stop">
+            <img class="btn" src="buttons/scan-outline.svg" id="fullscreen" alt="">
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
