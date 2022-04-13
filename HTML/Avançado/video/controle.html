@@ -42,6 +42,9 @@
             padding: 10px 10px;
             width: 35px;
         }
+        #progress{
+            width: 100%;
+        }
     </style>
     
 </head>
@@ -59,9 +62,9 @@
             <img class="btn" id="remove" src="buttons/remove-circle-outline.svg" alt="remove">
             <img class="btn" id="play" src="buttons/play-circle-outline.svg" alt="play">
             <img class="btn" id="stop" src="buttons/stop-circle-outline.svg" alt="stop">
-            <img class="btn" src="buttons/scan-outline.svg" id="fullscreen" alt="">
+            <img class="btn" id="fullscreen" src="buttons/scan-outline.svg"  alt="scan">
         </div>
-
+        <input id="progress" type="range" value="0" max="1000">
     </div>
     
     <script src="script.js"></script>
