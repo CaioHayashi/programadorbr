@@ -1,6 +1,8 @@
 let audio = document.querySelector("#audio")
 let next = document.querySelector("#next")
+let play = document.querySelector("#play")
 let back = document.querySelector("#back")
+let progress = document.querySelector("bar")
 let img = document.querySelector("#img")
 let choose = document.querySelector("#choose")
 let musics = [
@@ -15,6 +17,7 @@ let musics = [
     }
 ]
 let index = 0
+let count = 0
 
 img.src
 audio.src = musics[index].file
@@ -39,20 +42,9 @@ function backMusic(){
     audio.src = musics[index].file
     audio.play()
 }
-
-/* for(i in musics){
-    let newBtn = document.createElement("button")
-
-    newBtn.innerHTML = musics[i].file
-    choose.appendChild(newBtn)
-
-    newBtn.addEventListener("click", function(){
-        console.log(this)
-
-    }) 
     
-}*/
-musics.forEach((value, index) => {
+
+musics.forEach((value ,index) => {
     let newBtn = document.createElement("button")
 
     newBtn.innerHTML = musics[index].file
@@ -65,7 +57,20 @@ musics.forEach((value, index) => {
     })
 })
 
+function playPause(){
+    if(count == 0){
+        count = 1
+        audio.play()
+        play.src = "button/pause-circle.svg"
+    } else {
+        count = 0
+        audio.pause()
+        play.src = "button/play-circle.svg"
+    }
+}
+
 
 next.addEventListener("click", nextMusic)
+play.addEventListener("click", playPause)
 back.addEventListener("click", backMusic)
 
