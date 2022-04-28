@@ -60,7 +60,9 @@ function RenderMe(){
     trackArtist.innerHTML = musics[index].artist
 }
 RenderMe()
-    
+
+
+
 
 function playPause(){
     isPlaying ? goPause() : goPlay()
@@ -79,26 +81,22 @@ function goPlay(){
 }
 
 
-
 function updateProgress(){
     let porcent = Math.floor((audio.currentTime / audio.duration) * 100)
     progress.value = porcent
-    currentMusic.innerHTML = secondsInMinutes(Math.floor(audio.currentTime))
+    currentMusic.innerHTML = secondsInMinutes(Math.floor(audio.currentTime)
+    )
     totalMusic.innerHTML = secondsInMinutes(Math.floor(audio.duration))
-
     if(audio.currentTime == audio.duration){
         nextMusic()
     }
-} 
+}  
 
- 
 function changeProgress(){
     audio.currentTime = progress.value / progress.max * audio.duration
     goPlay()
     audio.play()
 }
-
-var aleatorio = 3520
 
 function secondsInMinutes(second){
     let minutes = Math.floor(second / 60)
@@ -110,6 +108,8 @@ function secondsInMinutes(second){
 
     return minutes + ":" + seconds
 }
+
+
 
 function backMusic(){
     index --
@@ -129,9 +129,8 @@ function nextMusic(){
     goPlay()
 }
 
-function loadDuration(){
-    totalMusic
-}
+
+
 
 //EVENTS
 
@@ -140,4 +139,3 @@ audio.addEventListener("timeupdate", updateProgress)
 progress.addEventListener("change", changeProgress)
 back.addEventListener("click", backMusic)
 foward.addEventListener("click", nextMusic)
-totalMusic.addEventListener("load", loadDuration)

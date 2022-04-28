@@ -34,20 +34,36 @@
         let squares = [1, 2, 3, 4]
         let isTomato = true
 
-        function changeColor(){
+        /* function changeColor(){
             isTomato ? changeforBlue() : changeforTomato()
-        }
+        } */
+
         function createSquare(){
             for(i in squares){
                 let newDiv = document.createElement("div")
                 newDiv.classList.add("square")
 
+                newDiv.addEventListener("click", function () {
+                    isTomato ? changeforBlue() : changeforTomato()
+                })
+
+                function changeforBlue(){
+                    newDiv.style.backgroundColor = "steelblue"
+                    isTomato = false
+                }
+
+                function changeforTomato(){
+                    newDiv.style.backgroundColor = "tomato"
+                    isTomato = true
+                }
+
+                
                 container.appendChild(newDiv)
             }
         }
         createSquare()
 
-        function changeforBlue(){
+        /* function changeforBlue(){
             square.style.backgroundColor = "steelblue"
             isTomato = false
         }
@@ -55,9 +71,8 @@
         function changeforTomato(){
             square.style.backgroundColor = "tomato"
             isTomato = true
-        }
+        } */
 
-        square.addEventListener("click", changeColor)
 
     </script>
 </body>
