@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .square{
+            background-color: tomato;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+
+
+    <script>
+        let container = document.querySelector(".container")
+        let square = document.querySelector(".square")
+        let squares = [1, 2, 3, 4]
+        let isTomato = true
+
+        function changeColor(){
+            isTomato ? changeforBlue() : changeforTomato()
+        }
+        function createSquare(){
+            for(i in squares){
+                let newDiv = document.createElement("div")
+                newDiv.classList.add("square")
+
+                container.appendChild(newDiv)
+            }
+        }
+        createSquare()
+
+        function changeforBlue(){
+            square.style.backgroundColor = "steelblue"
+            isTomato = false
+        }
+
+        function changeforTomato(){
+            square.style.backgroundColor = "tomato"
+            isTomato = true
+        }
+
+        square.addEventListener("click", changeColor)
+
+    </script>
+</body>
+</html>

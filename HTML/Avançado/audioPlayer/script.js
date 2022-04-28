@@ -1,76 +1,143 @@
-let audio = document.querySelector("#audio")
-let next = document.querySelector("#next")
-let play = document.querySelector("#play")
-let back = document.querySelector("#back")
-let progress = document.querySelector("bar")
-let img = document.querySelector("#img")
-let choose = document.querySelector("#choose")
-let musics = [
+let img = document.getElementById("img")
+let audio = document.getElementById("audio")
+let trackName = document.getElementById("track-name")
+let trackArtist = document.getElementById("track-artist")
+let back = document.getElementById("back")
+let play = document.getElementById("play")
+let foward = document.getElementById("foward")
+let currentMusic = document.getElementById("current-time")
+let totalMusic = document.getElementById("total-duration")
+let progress = document.getElementById("progress")
+
+let isPlaying = false
+let index = 0
+
+
+//STORAGE
+
+let data = [
     {
-        file: "assets/Bite Me (Clean) - NEFFEX.mp3"
+        image: "images/As It Was.png",
+        title: "As It Was",
+        artist: "Harry Styles",
+        file: "assets/Harry Styles - As It Was.mp3",
+        background: "linear-gradient(35deg, #356B8C 0%, #E5D6BF 50%, #BF926B 100%)"
     },
     {
-        file: "assets/It's Only Worth It If You Work For It (Clean) - NEFFEX.mp3"
+        image: "images/Stay_-_The_Kid_Laroi_e_Justin_Bieber.png",
+        title: "Stay",
+        artist: "The Kid LAROI, Justin Bieber",
+        file: "assets/The Kid LAROI, Justin Bieber - Stay.mp3",
+        background: "linear-gradient(328deg, #054a59 0%, #87a1b6 52%, #b2f7ff 100%)"
     },
     {
-        file: "assets/Statement (Clean) - NEFFEX.mp3"
+        image: "images/Jack_Harlow_-_Come_Home_the_Kids_Miss_You.png",
+        title: "First Class",
+        artist: "Jack Harlow",
+        file: "assets/Jack Harlow - First Class.mp3",
+        background: "linear-gradient(328deg, #B59F9D 0%, #F2EBEB 100%)"
+    },
+    {
+        image: "images/Montero_-_Lil_Nas_X.png",
+        title: "THATS WHAT I WANT",
+        artist: "Lil Nas X",
+        file: "assets/Lil Nas X - THATS WHAT I WANT.mp3",
+        background: "linear-gradient(339deg, #db8cba 7%, #fff 50%, #7ca0c4 100%)"
     }
 ]
-let index = 0
-let count = 0
 
-img.src
-audio.src = musics[index].file
+localStorage.setItem("newData", JSON.stringify(data))
+let musics = JSON.parse(localStorage.newData)
 
 
-function nextMusic(){
-    index++
+//FUNCTIONS
 
-    if(index > musics.length - 1) {
-        index = 0
-    }
+function RenderMe(){
+    img.src = musics[index].image
     audio.src = musics[index].file
+    document.body.style.backgroundImage = musics[index].background
+    trackName.innerHTML = musics[index].title
+    trackArtist.innerHTML = musics[index].artist
+}
+RenderMe()
+    
+
+function playPause(){
+    isPlaying ? goPause() : goPlay()
+}
+
+function goPause(){
+    audio.pause()
+    play.src = "buttons/play-circle.svg"
+    isPlaying = false
+}
+
+function goPlay(){
     audio.play()
+    play.src = "buttons/pause-circle.svg"
+    isPlaying = true
+}
+
+
+
+function updateProgress(){
+    let porcent = Math.floor((audio.currentTime / audio.duration) * 100)
+    progress.value = porcent
+    currentMusic.innerHTML = secondsInMinutes(Math.floor(audio.currentTime))
+    totalMusic.innerHTML = secondsInMinutes(Math.floor(audio.duration))
+
+    if(audio.currentTime == audio.duration){
+        nextMusic()
+    }
+} 
+
+ 
+function changeProgress(){
+    audio.currentTime = progress.value / progress.max * audio.duration
+    goPlay()
+    audio.play()
+}
+
+var aleatorio = 3520
+
+function secondsInMinutes(second){
+    let minutes = Math.floor(second / 60)
+    let seconds = second % 60
+
+    if (seconds < 10){
+        seconds = '0' + seconds
+    }
+
+    return minutes + ":" + seconds
 }
 
 function backMusic(){
     index --
-    
     if(index < 0){
         index = musics.length - 1
     }
-    audio.src = musics[index].file
-    audio.play()
+    RenderMe()
+    goPlay()
 }
-    
 
-musics.forEach((value ,index) => {
-    let newBtn = document.createElement("button")
-
-    newBtn.innerHTML = musics[index].file
-    choose.appendChild(newBtn)
-    
-    newBtn.addEventListener("click", function(){
-        audio.src = musics[index].file
-        audio.play()
-        console.log(musics[index].file)
-    })
-})
-
-function playPause(){
-    if(count == 0){
-        count = 1
-        audio.play()
-        play.src = "button/pause-circle.svg"
-    } else {
-        count = 0
-        audio.pause()
-        play.src = "button/play-circle.svg"
+function nextMusic(){
+    index ++
+    if(index > musics.length - 1){
+        index = 0
     }
+    RenderMe()
+    goPlay()
 }
 
+function loadDuration(){
+    totalMusic
+}
 
-next.addEventListener("click", nextMusic)
+//EVENTS
+
 play.addEventListener("click", playPause)
+audio.addEventListener("timeupdate", updateProgress)
+progress.addEventListener("change", changeProgress)
 back.addEventListener("click", backMusic)
-
+foward.addEventListener("click", nextMusic)
+totalMusic.addEventListener("load", loadDuration)
