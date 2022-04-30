@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .screen {
+            width: 500px;
+            height: 500px;
+            background-color: beige;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .square {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+        <div class="square" id="player"></div>
+    </div>
+    
+    <script>
+        let player = document.getElementById("player")
+
+        let XInicial = 0 
+        let YInicial = 0
+
+        function movePlayerFor(x, y){
+            let posX = x + "px"
+            let posY = y + "px"
+
+            player.style.top = posX
+            player.style.left = posY
+        }
+
+        setInterval(function(){
+            movePlayerFor(XInicial++, YInicial++)
+        }, 14)
+
+    </script>
+</body>
+</html>
