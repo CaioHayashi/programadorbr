@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .screen{
+            background-color: rgba(254, 157, 140, 0.549);
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img id="steven" src="images/steven.png" alt="image-Steven" style="display: none;">
+
+    <canvas class="screen" id="screen" width="500px" height="500px"></canvas>
+
+    <script>
+        let screen1 = document.getElementById("screen")
+        let ctx = screen1.getContext("2d") 
+
+
+        let steven = new Image()
+        steven.src = "images/steven.png"
+
+        steven.onload = function(){
+            ctx.drawImage(this, 20, 20, this.naturalWidth / 2, this.naturalHeight / 2)
+        }
+    </script>
+</body>
+</html>
