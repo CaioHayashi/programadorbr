@@ -1,8 +1,0 @@
-p::first-letter{
-    color: red;
-    font-size: 5rem;
-}
-
-p::first-line{
-    color: blue;
-}

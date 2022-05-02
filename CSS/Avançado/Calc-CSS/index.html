@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: red;
+        }
+
+        .container{
+            width: 100%;
+            background-color: blue;
+        }
+        .primeira{
+            display: inline-block;
+            margin: 0px -4px -4px 0px; /* corrigir o bug do inline-block */
+            width: calc(100% - 200px);
+            height: 200px;
+            background-color: yellow;
+        }
+        .segunda{
+            display: inline-block;
+            margin: 0px -4px -4px 0px;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .button {
+            width: calc(80% - 50px);
+            height: 100px;
+            background-color: blue;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="primeira"></div>
+        <div class="segunda"></div>
+    </div>
+
+    <div class="button"></div>
+</body>
+</html>
