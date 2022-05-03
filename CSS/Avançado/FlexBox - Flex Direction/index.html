@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            /*          
+            flex-direction: column;
+            flex-wrap: wrap-reverse; 
+            */
+
+            /* flex-flow pode substituir o flex-direction e o flex-wrap */
+            flex-flow: column wrap-reverse;
+            
+/* row, row-reverse, colum, colum-reverse */
+            background-color: gray;
+            height: 600px;
+
+            color: white;
+        }
+
+        .rect{
+            display: flex;
+            flex-direction: row-reverse;
+            width: 200px;
+            height: 200px;
+        }
+
+        .r1{
+            background-color: red;
+
+        }
+        .r2{
+            background-color: blue;
+        }
+        .r3{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rect r1">1</div>
+        <div class="rect r2">2</div>
+        <div class="rect r3">3</div>
+    </div>
+</body>
+</html>
