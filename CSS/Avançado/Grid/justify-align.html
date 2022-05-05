@@ -11,16 +11,22 @@
 /*             grid-template-rows: 2fr 1fr; 
             grid-template-columns: 1fr 3fr 1fr; */
 
-            grid-template: 2fr 1fr / 1fr 3fr 1fr;
+            grid-template: auto auto  / auto auto auto;
+            /* row-gap: 10px;
+            column-gap: 5px; */
+            gap: 10px 5px;
+            justify-items: center;
+            align-items: center;
 
             width: 100%;
             height: 500px;
             background-color: darkseagreen;
             color: white;
         }
-
+        
         .square{
-            margin: 5px;
+            width: 150px;
+            height: 150px;
         }
 
         .s1{
@@ -46,5 +52,7 @@
         <div class="square s2">2</div>
         <div class="square s3">3</div>
     </div>
+
+    <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-align-items"> site com ilustrações</a>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            background-color: darkseagreen;
+            color: white;
+            padding: 10px;
+
+/*             grid-template-areas:
+                                "a2 a2 a2 a2 a2 a2 a2"
+                                "a1 a1 a3 a3 a3 a3 a3"
+                                "a1 a1 a5 a4 a4 a4 a4"
+                                "a6 a6 a6 a6 a6 a6 a6"; */
+        }
+        
+
+        .s1{
+            background-color: red;
+        }
+        .s2{
+            background-color: blue;
+        }
+        .s3{
+            background-color: green;
+        }
+
+        .item1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 4;
+
+
+        }
+        .item2{
+            grid-column-start: 1;
+            grid-column-end: 7;
+        }
+        .item3{
+            grid-column-end: span 4;
+        }
+        .item4{
+            grid-column-end: span 3;
+
+        }
+        .item5{
+            grid-column-start: 3;
+            grid-row-start: 3;
+        }
+        .item6{
+            grid-column-start: 1;
+            grid-column-end: 7;
+        }
+
+    </style>
+</head>
+    
+<body>
+    <div class="container">
+        <div class="square s1 item1">1</div>
+        <div class="square s2 item2">2</div>
+        <div class="square s3 item3">3</div>
+        <div class="square s1 item4">4</div>
+        <div class="square s2 item5">5</div>
+        <div class="square s3 item6">6</div>
+    </div>
+
+    <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-align-items"> site com ilustrações</a>
+</body>
+</html>
