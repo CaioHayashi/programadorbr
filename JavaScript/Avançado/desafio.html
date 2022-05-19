@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    Desafio: 
+
+    Usar uma função para map() e para o reduce()
+    */
+    let pokemons = [
+        {
+            name: "bulbasaur",
+            type: "grass",
+            attack: 300
+        },
+        {
+            name: "squartle",
+            type: "water",
+            attack: 400
+        },
+        {
+            name: "charmander",
+            type: "fire",
+            attack: 300
+        }
+    ]
+
+    function typeGrass( pokemon ) {
+        if (pokemon.type === "grass") {
+            return pokemon
+        }
+    }
+
+    function nameType ( pokemon ){
+        return `${pokemon.name} é do tipo ${pokemon.type}.` 
+    }
+
+    function sumAttack ( total , pokemon ) {
+        return (total + pokemon.attack)
+    }
+
+    let pokemonTypeGrass = pokemons.filter(typeGrass)
+
+    let nameAndType = pokemons.map(nameType)
+
+    let mediaAttack = pokemons.reduce(sumAttack, 0)
+
+    console.log(pokemonTypeGrass)
+    console.log(nameAndType)
+    console.log(mediaAttack / pokemons.length)
+    </script>
+</body>
+</html>

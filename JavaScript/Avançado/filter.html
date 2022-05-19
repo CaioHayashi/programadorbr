@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* todo array vem com o method: filter(), que recebe como parametro um callback */
+
+        function newPlayer( name, year ) {
+            return { name, year }
+        } 
+
+        const players = [
+            newPlayer( "Paulo", 32 ),
+            newPlayer( "Fernando", 23 ),
+            newPlayer( "Gustavo", 21 ),
+            newPlayer( "Maria", 41 ),
+            newPlayer( "Marcia", 31 ),
+            newPlayer( "Bruno", 17 ),
+            newPlayer( "Barbara", 33 ),
+        ]
+
+        function under30( player ) {
+            return player.year < 30
+        }
+
+        function above30( player ) {
+            return player.year > 30
+        }
+
+        let playersAbove30 = players.filter( above30 )
+        let playersUnder30 = players.filter( under30 )
+
+        console.log( players )
+        console.log( playersUnder30 )
+        console.log( playersAbove30 )
+
+    </script>
+</body>
+</html>

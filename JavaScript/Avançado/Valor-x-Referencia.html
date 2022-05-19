@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    /* 
+    Atribuição por valor: 
+    Faz uma cópia do elemento original, e qualquer alteração na cópia não vai refletir no original.
+    ex: Strings, Booleans, Number
+    
+    Atribuição por referência:
+    Não faz cópia, é como se desse um novo apelido para o objeto original. Qualquer modificação no novo elemento altera também o original.
+    ex: Arrays, Objects    
+    */
+
+    //resolvendo um Array:
+
+    let turmaA = ["Caio", "Paulo", "Matheus"]
+    let turmaB = turmaA.slice() // maneira 1
+    /* let turmaB = [...turmaA] // maneira 2 */
+
+    turmaB.push( "Ana" )
+
+    //resolvendo um Object:
+
+    let alunoA = {nome: "Caio", idade:15 }
+    let alunoB = Object.assign( {}, alunoA ) //maneira 1
+    /* let alunoB = {...alunoA} //maneira 2 */
+
+    alunoB.idade = 25
+
+    </script>
+</body>
+</html>

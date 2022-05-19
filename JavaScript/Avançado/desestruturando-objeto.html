@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object
+        let aluno = {
+            nome: "Marcos",
+            matricula: 1234,
+            telefone: 987654321,
+            email: "marcos@gmail.com",
+            cidade: "São Paulo"
+        }
+
+        let { nome, matricula, ...resto } = aluno
+        let { ...copiaAluno } = aluno
+
+        console.log(nome)
+        console.log(matricula)
+        console.log(resto)
+        console.log(copiaAluno)
+
+        //Array
+        let alunoA = {
+            nome: "Marcos",
+            matricula: 1234,
+            telefone: 987654321,
+            email: "marcos@gmail.com",
+            cidade: "São Paulo"
+        }
+
+        let alunoB = {
+            nome: "José",
+            matricula: 1235,
+            telefone: 987654321,
+            email: "marcos@gmail.com",
+            cidade: "São Paulo"
+        }
+
+        let alunoC = {
+            nome: "Maria",
+            matricula: 1236,
+            telefone: 987654321,
+            email: "marcos@gmail.com",
+            cidade: "São Paulo"
+        }
+
+        let alunos = [ alunoA, alunoB, alunoC ]
+
+        let [ Marcos, ...outros ] = alunos
+
+        console.log(Marcos)
+        console.log(outros)
+    </script>
+</body>
+</html>

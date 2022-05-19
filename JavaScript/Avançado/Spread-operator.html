@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <script>
+    /*
+    Spread Operator:
+
+    junta mais de um Array/Object em um novo, mantendo os originais.
+    */
+        
+    //Object:
+        let pessoa = {
+            nome: "José Silveira",
+            idade: "35"
+        }
+
+        let contato = {
+            telefone: "98765-4582",
+            email: "joseSilveira@gmail.com"
+        }
+
+
+        let copia = { ...pessoa, ...contato, cidade: "São Paulo" } // também dá para passar uma nova propriedade, como "cidade"
+
+        console.log( pessoa, contato )
+        console.log( copia )
+
+
+
+        //Array:
+        let notas_turma1 = [ 10, 8, 9, 6 ]
+        let notas_turma2 = [ 4, 5, 9, 7 ]
+
+        let todas_notas = [ ...notas_turma1, ...notas_turma2 ]
+
+        console.log( todas_notas)
+    </script>
+</body>
+</html>
