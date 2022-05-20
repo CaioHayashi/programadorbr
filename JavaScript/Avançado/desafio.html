@@ -13,47 +13,63 @@
 
     Usar uma função para map() e para o reduce()
     */
-    let pokemons = [
-        {
-            name: "bulbasaur",
-            type: "grass",
-            attack: 300
-        },
-        {
-            name: "squartle",
-            type: "water",
-            attack: 400
-        },
-        {
-            name: "charmander",
-            type: "fire",
-            attack: 300
-        }
-    ]
+        let pessoas = [
+            {
+                nome: 'Isa',
+                idade : 19
+            },
+            {
+                nome: 'Matheus',
+                idade : 17
+            },
+            {
+                nome: 'Ana',
+                idade : 22
+            },
+            {
+                nome: 'Felipe',
+                idade : 23
+            },
+            {
+                nome: 'Paulo',
+                idade : 31
+            },
+            {
+                nome: 'Maria',
+                idade : 15
+            }
+        ]
 
-    function typeGrass( pokemon ) {
-        if (pokemon.type === "grass") {
-            return pokemon
-        }
-    }
+        let pessoasAgrupadas = pessoas.reduce( function( valorAcumulador, valorArray) {
 
-    function nameType ( pokemon ){
-        return `${pokemon.name} é do tipo ${pokemon.type}.` 
-    }
+            const MaiorOuMenor = valorArray.idade >= 18 ? 'maiores' : 'menores'
 
-    function sumAttack ( total , pokemon ) {
-        return (total + pokemon.attack)
-    }
+            valorAcumulador[MaiorOuMenor].push(valorArray)
+            return valorAcumulador
 
-    let pokemonTypeGrass = pokemons.filter(typeGrass)
+        }, { maiores: [], menores: []})
 
-    let nameAndType = pokemons.map(nameType)
+        console.log(pessoasAgrupadas)
 
-    let mediaAttack = pokemons.reduce(sumAttack, 0)
+        let colors = [
+            {
+                color: "red",
+            },
+            {
+                color: "blue",
+            },
+            {
+                color: "green",
+            }
+        ]
 
-    console.log(pokemonTypeGrass)
-    console.log(nameAndType)
-    console.log(mediaAttack / pokemons.length)
+        let colorReduce = colors.reduce( function ( previousValue, currentValue) {
+            return currentValue.color = "red"
+            previousValue.push(currentValue)
+        
+        } , { color: []})
+
+        console.log(colorReduce)
     </script>
 </body>
 </html>

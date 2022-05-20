@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <input id="input" type="number">
+    <input id="conv" type="button" value="convert">
+    <div id="res"></div>
+    <div id="info"></div>
+
+
+    <script>
+        let url = 'https://economia.awesomeapi.com.br/last/USD-BRL'
+        let title = document.getElementById("title")
+        let input = document.getElementById("input")
+        let btn = document.getElementById("conv")
+        let res = document.getElementById("res")
+        let info = document.getElementById("info")
+
+
+        function convert() {
+            
+            fetch(url).then(res => { return res.json() }).then( data => { 
+                let rate = data.USDBRL
+
+                res.innerHTML = `${rate.ask * input.value} ${rate.codein}`
+                info.innerHTML = `${rate.name} ${rate.create_date}`
+
+                console.log(rate)
+            })
+        }
+
+        btn.addEventListener("click", convert)
+    </script>
+</body>
+</html>
