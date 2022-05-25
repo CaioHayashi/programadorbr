@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* class, constructor, get & set */
+/*         class Person { 
+            constructor(name) {
+                this._name = name
+            }
+
+            set name(string) {
+                this._name = string
+            }
+
+            get name() {
+                return this._name
+            }
+
+            walk() {
+                return `${this._name} está andando.`           
+            }
+        }
+
+        var person = new Person('Pedro')
+        person.name = "Zezinho"
+
+        console.log(person.name) */
+
+        //////// exemplo 2
+
+        /* const livro = {
+            nome: "React Native",
+            editora: "Casa do Código",
+            paginas: 185,
+            anunciar: function () { console.log(`A Alura indica o livro ${this.nome}!`) }
+        }
+
+        livro.anunciar() 
+
+        function livro (nome, editora, paginas) {
+            gNome = nome,
+            gEditora = editora,
+            gPaginas = paginas,
+            anunciar = function () {
+                console.log(`A Alura indica o livro ${this.nome}!`)
+            }
+
+            this.getName = function() {
+                return gNome
+            }
+            this.getEditora = function() {
+                return gEditora
+            }
+            this.getPaginas = function() {
+                return gPaginas
+            }
+        }
+
+        const GraphQL = new livro("GraphQL", "Casa do Código", 143)
+
+        console.log(GraphQL.getName())
+        console.log(GraphQL.getEditora())
+        console.log(GraphQL.getPaginas()) */
+        
+        class livro {
+            constructor( nome, editora, paginas ){
+                this._nome = nome
+                this._editora = editora
+                this._paginas = paginas
+            }
+
+            anunciarTitulo(){
+                console.log(`Título: ${this._nome}`)
+            }
+
+            descreverTitulo(){
+                console.log(`${this._nome} é um livro da editora ${this._editora} e tem ${this._paginas} páginas`)
+            }
+        }
+
+        const cleanCode = new livro("Clean Code", "Alta Books", 425)
+
+        console.log(cleanCode)
+        cleanCode.anunciarTitulo()
+        cleanCode.descreverTitulo()
+
+        class livroColecao extends livro {
+            constructor ( nome, nomeColecao ) {
+                super(nome)
+                this._nomeColecao = nomeColecao
+            }
+
+            descreverColecao() {
+                console.log( `O livro ${this._nome} faz parte da coleção ${this._nomeColecao}` )
+            }
+        }
+
+        const logicaDeProgramacao = new livroColecao("Lógica de Programação", "Começe a Programar")
+
+        console.log(logicaDeProgramacao)
+        logicaDeProgramacao.descreverColecao()
+
+    </script>
+</body>
+</html>
